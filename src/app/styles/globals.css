@@ -21,24 +21,23 @@
     @apply h-5 w-5;
   }
   .button-primary {
-    @apply flex items-center py-1 md:py-2 px-4 md:px-7 tracking-wider md:text-[16px] font-semibold hover:scale-105 hover:bg-opacity-75 text-white gap-4 transform ease-in-out duration-500 transition-all;
+    @apply flex transform items-center justify-center gap-4 px-4 py-1 font-semibold tracking-wider text-white transition-all duration-500 ease-in-out hover:scale-105 hover:bg-opacity-75 md:px-7 md:py-2 md:text-[16px];
   }
   .button-secondary {
-    @apply flex items-center py-1 px-6 tracking-wider text-sm font-semibold hover:scale-105 hover:bg-opacity-75 text-white gap-4 transform ease-in-out duration-500 transition-all;
+    @apply flex transform items-center gap-4 px-6 py-1 text-sm font-semibold tracking-wider text-white transition-all duration-500 ease-in-out hover:scale-105 hover:bg-opacity-75;
   }
   .button-outlined {
-    @apply flex items-center py-1 md:py-2 px-4 md:px-7 tracking-wider text-sm font-semibold hover:scale-105 hover:bg-opacity-75 text-white gap-4 border-4 transform ease-in-out duration-500 transition-all;
+    @apply flex transform items-center gap-4 border-4 px-4 py-1 text-sm font-semibold tracking-wider text-white transition-all duration-500 ease-in-out hover:scale-105 hover:bg-opacity-75 md:px-7 md:py-2;
   }
   .button-secondary-outlined {
-    @apply flex items-center py-1 px-4 tracking-wider md:text-[16px] font-semibold hover:scale-105 hover:bg-opacity-75 text-white gap-4 border-4 transform ease-in-out duration-500 transition-all;
+    @apply flex transform items-center gap-4 border-4 px-4 py-1 font-semibold tracking-wider text-white transition-all duration-500 ease-in-out hover:scale-105 hover:bg-opacity-75 md:text-[16px];
   }
   .menu-item-primary {
-    @apply flex w-full cursor-pointer items-center rounded p-2 text-custom-8 hover:bg-custom-2 hover:text-white focus:outline-none transform ease-in-out duration-300 transition-all;
+    @apply flex w-full transform cursor-pointer items-center rounded p-2 text-custom-8 transition-all duration-300 ease-in-out hover:bg-custom-2 hover:text-white focus:outline-none;
   }
   .menu-item-destructive {
     @apply flex w-full cursor-pointer items-center rounded p-2 text-gray-600 hover:bg-rose-500 hover:text-white focus:outline-none;
   }
-  /* ---- not used ----- */
   .button-alternate {
     @apply rounded-lg border border-gray-200 bg-white px-5 py-2 text-center text-sm font-medium text-gray-800 transition-all hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200 disabled:cursor-not-allowed disabled:border-gray-100 disabled:text-gray-500 disabled:hover:bg-white;
   }
@@ -49,10 +48,10 @@
     @apply h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-blue-500;
   }
   .form-input {
-    @apply block w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2.5 text-sm text-gray-800 outline-none transition-all ease-soft focus:border-blue-500 focus:shadow-input-outline focus:ring-blue-500 disabled:border-gray-100 disabled:text-gray-200;
+    @apply block w-full rounded-md border-0 border-gray-300 bg-gray-50 px-4 py-2 text-sm text-gray-900 outline-none ring-1 ring-inset ring-gray-300 transition-all ease-soft placeholder:text-gray-400 focus:border-indigo-500 focus:shadow-input-outline focus:ring-2 focus:ring-inset focus:ring-indigo-600 disabled:border-gray-100 disabled:text-gray-200 sm:text-sm sm:leading-6;
   }
   .form-label {
-    @apply mb-2 block text-sm font-medium text-gray-800;
+    @apply block text-sm font-medium leading-6 text-gray-900;
   }
   .form-file {
     @apply cursor-pointer truncate text-sm text-gray-500 file:mr-4 file:rounded-full file:border-0 file:bg-blue-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-blue-700 hover:file:bg-blue-100;
