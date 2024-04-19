@@ -16,8 +16,8 @@ export const navmenuData: INavMenuData[] = [
   { name: 'About', link: '#about-us' },
   { name: 'Programs', link: '#programs' },
   { name: 'Inquiry', link: '#inquiry' },
-  { name: 'Careers', link: '#careers' },
   { name: 'Community', link: '#community' },
+  { name: 'Careers', link: '#careers' },
 ]
 
 export const aboutUsData: IAboutUsData[] = [
@@ -69,7 +69,7 @@ export const programsData: IProgramsData[] = [
   { title: 'GAS', img: programImage7 },
 ]
 
-export const programsData2: string[] = [
+export const inquiryData: string[] = [
   'Discover your ideal program',
   'Explore our dynamic catalog',
   'Unlock your potential today',
