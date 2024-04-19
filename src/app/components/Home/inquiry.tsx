@@ -18,7 +18,7 @@ export default function Inquiry() {
             <p>
               Embark on a journey of education with our extensive lineup of
               courses crafted to accommodate diverse skill levels and interests.
-              Whether you're just starting out and in need of foundational
+              Whether you&apos;re just starting out and in need of foundational
               knowledge or seeking to advance your skills, our programs cater to
               learners at every stage of development.
             </p>
