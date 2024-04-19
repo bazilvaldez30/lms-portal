@@ -10,7 +10,7 @@ import 'react-vertical-timeline-component/style.min.css'
 
 export default function AboutUs() {
   return (
-    <section id='about-us' className='scroll-mt-2 my-12'>
+    <section id='about-us' className='bg-aboutUsBg scroll-mt-2 py-12'>
       <h1 className='text-2xl font-semibold text-center mb-6'>Our Identity</h1>
       <VerticalTimeline lineColor='#A7252F'>
         {aboutUsData.map((item) => (
