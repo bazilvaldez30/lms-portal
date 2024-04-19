@@ -6,8 +6,8 @@ import landingImage from '/public/images/landing-page-image.png'
 
 export default function Landing() {
   return (
-    <main className='flex flex-col items-center bg-custom-1 text-white pt-4'>
-      <div className='space-y-6'>
+    <main className='flex flex-col items-center just bg-custom-1 text-white pt-4 h-screen'>
+      <div className='space-y-6 h-full flex flex-col justify-center items-center'>
         <h1 className='text-2xl font-semibold'>
           Commence a journeyof explorations with
           <br />
@@ -24,7 +24,7 @@ export default function Landing() {
           </button>
         </div>
       </div>
-      <Image className='-mt-12' src={landingImage} alt='landing-image' />
+      <Image className='mt-auto' src={landingImage} alt='landing-image' />
     </main>
   )
 }

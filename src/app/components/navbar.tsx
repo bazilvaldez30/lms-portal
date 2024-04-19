@@ -4,12 +4,15 @@ import Link from 'next/link'
 import React from 'react'
 import { navmenuData } from '../shared/datas'
 import { useNavbarScroll } from '../shared/hooks/useNavbarScroll'
+import { useGetPathName } from '../shared/hooks/useGetPathName'
 
 export default function Navbar() {
   const { isScrolled } = useNavbarScroll()
+  const { url } = useGetPathName()
 
   return (
     <nav
+      hidden={url === '/login'}
       className={`sticky bg-custom-1 top-0 z-50 w-full border-gray-300 text-custom-8 py-5 px-6 transform duration-500 transition-all ${
         isScrolled ? 'bg-custom-3' : ''
       }`}
