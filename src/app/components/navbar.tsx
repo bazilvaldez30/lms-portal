@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 z-50 w-full border-gray-300 text-custom-8 py-5 px-6 transform duration-500 transition-all ${
+      className={`sticky bg-custom-1 top-0 z-50 w-full border-gray-300 text-custom-8 py-5 px-6 transform duration-500 transition-all ${
         isScrolled ? 'bg-custom-3' : ''
       }`}
     >

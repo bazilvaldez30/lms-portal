@@ -6,7 +6,7 @@ import landingImage from '/public/images/landing-page-image.png'
 
 export default function Landing() {
   return (
-    <main className='flex min-h-screen flex-col items-center pt-28 bg-custom-1 text-white gap-6'>
+    <main className='flex flex-col items-center bg-custom-1 text-white gap-6'>
       <h1 className='text-2xl font-semibold'>
         Commence a journeyof explorations with
         <br />
