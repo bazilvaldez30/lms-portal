@@ -24,10 +24,10 @@
     @apply flex items-center py-1 md:py-2 px-4 md:px-7 tracking-wider md:text-[16px] font-semibold hover:scale-105 hover:bg-opacity-75 text-white gap-4 transform ease-in-out duration-500 transition-all;
   }
   .button-secondary {
-    @apply flex items-center py-1 px-6  tracking-wider md:text-[16px] font-semibold hover:scale-105 hover:bg-opacity-75 text-white gap-4 transform ease-in-out duration-500 transition-all;
+    @apply flex items-center py-1 px-6 tracking-wider text-sm font-semibold hover:scale-105 hover:bg-opacity-75 text-white gap-4 transform ease-in-out duration-500 transition-all;
   }
   .button-outlined {
-    @apply flex items-center py-1 md:py-2 px-4 md:px-7 tracking-wider md:text-[16px] font-semibold hover:scale-105 hover:bg-opacity-75 text-white gap-4 border-4 transform ease-in-out duration-500 transition-all;
+    @apply flex items-center py-1 md:py-2 px-4 md:px-7 tracking-wider text-sm font-semibold hover:scale-105 hover:bg-opacity-75 text-white gap-4 border-4 transform ease-in-out duration-500 transition-all;
   }
   .button-secondary-outlined {
     @apply flex items-center py-1 px-4 tracking-wider md:text-[16px] font-semibold hover:scale-105 hover:bg-opacity-75 text-white gap-4 border-4 transform ease-in-out duration-500 transition-all;

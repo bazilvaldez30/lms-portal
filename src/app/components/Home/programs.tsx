@@ -33,7 +33,6 @@ export default function Programs() {
             {programsData.map((item) => (
               <div key={item.title}>
                 <Image src={item.img} alt={item.title} />
-
                 <h2 className='text-xl font-semibold'>{item.title}</h2>
               </div>
             ))}
