@@ -3,11 +3,11 @@ import React from "react";
 
 export default function AdditionalInfo() {
   return (
-    <section className="flex justify-center gap-24 bg-custom-1 py-4">
+    <section className="flex flex-wrap justify-center gap-6 bg-custom-1 py-4 md:gap-24">
       {additionalInfoData.map((item) => (
         <div
           key={item.title}
-          className="flex items-center justify-center gap-3 py-4"
+          className="flex w-full items-center justify-center gap-3 py-4 md:w-auto"
         >
           <div className="text-6xl text-white">{item.icon}</div>
           <div className="space-y-2">

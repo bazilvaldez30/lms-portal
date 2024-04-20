@@ -2,6 +2,7 @@ import { careersData } from "@/app/shared/datas";
 import Image from "next/image";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+import ExpandableText from "../ExpandableText";
 
 export default function Careers() {
   return (
@@ -14,7 +15,7 @@ export default function Careers() {
               Browse <FaArrowRightLong className="icon" />
             </button>
           </div>
-          <p className=" text-muted">
+          <ExpandableText lineClamp={4}>
             Welcome to our diverse array of educational programs tailored to
             nurture young minds through every stage of their academic journey.
             Our programs span from early-stage education, providing a solid
@@ -26,7 +27,8 @@ export default function Careers() {
             thinking, and personal enrichment. Explore our programs to discover
             how we cultivate a passion for learning and empower students to
             thrive in both their academic pursuits and personal endeavors.
-          </p>
+          </ExpandableText>
+
           <div className="flex flex-wrap justify-center gap-4 pt-12 text-center">
             {careersData.map((item) => (
               <div key={item.title}>

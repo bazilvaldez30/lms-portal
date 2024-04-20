@@ -1,10 +1,6 @@
 import React, { ReactNode } from "react";
 
-interface ErrorDialogProps {
-  children: ReactNode;
-}
-
-const ErrorDialog: React.FC<ErrorDialogProps> = ({ children }) => {
+const ErrorDialog = ({ children }: { children: ReactNode }) => {
   return <p className="mt-1 text-xs text-red-500">{children}</p>;
 };
 
