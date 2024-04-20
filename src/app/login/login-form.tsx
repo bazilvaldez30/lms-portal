@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import googleImage from "/public/images/google.png";
-import { cn, validationErrorHandler } from "../shared/utils";
+import { cn, validationErrorHandler } from "../shared/helpers";
 import ErrorDialog from "../components/error-dialog";
 import { LoginFormSchema } from "../shared/schemas";
 

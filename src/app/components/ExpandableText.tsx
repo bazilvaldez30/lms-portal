@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { FaArrowDown, FaArrowUpLong } from "react-icons/fa6";
-import { cn } from "../shared/utils";
+import { cn } from "../shared/helpers";
 
 interface ExpandableTextProps {
   children: string;

@@ -15,7 +15,7 @@ export default function Careers() {
               Browse <FaArrowRightLong className="icon" />
             </button>
           </div>
-          <ExpandableText lineClamp={4}>
+          <ExpandableText>
             Welcome to our diverse array of educational programs tailored to
             nurture young minds through every stage of their academic journey.
             Our programs span from early-stage education, providing a solid

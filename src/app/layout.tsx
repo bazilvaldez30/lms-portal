@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./styles/globals.css";
 import Navbar from "./components/navbar";
-import { QueryClient, QueryClientProvider } from "react-query";
+import Provider from "./shared/Util/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 const mont = Montserrat({ subsets: ["latin"] });
-const queryClient = new QueryClient();
 
 export const metadata: Metadata = {
   title: "OLAS",
@@ -20,12 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <QueryClientProvider client={queryClient}>
-        <body className={mont.className}>
+      <body className={mont.className}>
+        <Provider>
           <Navbar />
           {children}
-        </body>
-      </QueryClientProvider>
+        </Provider>
+      </body>
     </html>
   );
 }
