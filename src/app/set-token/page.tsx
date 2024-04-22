@@ -1,4 +1,5 @@
 "use client";
+
 import { useSearchParams, useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { useEffect } from "react";
