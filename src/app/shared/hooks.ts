@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import type { AppDispatch, RootState } from "../redux/store";
 import { usePathname, useRouter } from "next/navigation";
-import { MouseEvent } from "react";
+import api from "./util/api";
+import { SET_USER } from "../redux/userSlice";
+import Cookies from "js-cookie";
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
@@ -41,4 +43,46 @@ export const useNavbarScroll = () => {
   }, []);
 
   return { isScrolled };
+};
+
+export const useSocialLogin = () => {
+  const router = useRouter();
+
+  const handleLoginSocial = async (provider: string) => {
+    try {
+      const response = await api.post(`/auth/${provider}/login/`);
+      console.log(response);
+      if (!(response.status >= 200 && response.status <= 299))
+        console.log(response);
+
+      const { url } = response.data;
+      router.push(url);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return { handleLoginSocial };
+};
+
+export const useManualLogin = () => {
+  const dispatch = useAppDispatch();
+
+  const manualLogin = async (formData: any) => {
+    try {
+      const response = await api.post(`/auth/login/`, formData);
+      if (!(response.status >= 200 && response.status <= 299)) {
+        console.log(response);
+        return;
+      }
+
+      Cookies.set("access", response.data.access);
+      Cookies.set("refresh", response.data.refresh);
+      dispatch(SET_USER(response.data.user));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return { manualLogin };
 };

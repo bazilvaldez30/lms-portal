@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const LoginFormSchema = z.object({
-  email: z
+  username_or_email: z
     .string()
     .email("Invalid email format")
     .min(1, { message: "Email is required" }),

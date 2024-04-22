@@ -30,9 +30,18 @@ interface ICareersData {
   };
 }
 
+interface ISocialLoginData {
+  name: string;
+  icon: {
+    src: string;
+    width: number;
+    height: number;
+  };
+}
+
 /* Forms */
 interface ILoginForm {
-  email: string;
+  username_or_email: string;
   password: string;
 }
 
