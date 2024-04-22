@@ -1,11 +1,16 @@
 "use client";
 
+import { store } from "@/app/redux/store";
 import React, { ReactNode, useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { Provider } from "react-redux";
 
-export default function Provider({ children }: { children: ReactNode }) {
+export default function Providers({ children }: { children: ReactNode }) {
   const [queryClient] = useState(() => new QueryClient());
+
   return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>{children}</Provider>
+    </QueryClientProvider>
   );
 }
