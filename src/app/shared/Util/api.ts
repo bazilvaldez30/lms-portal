@@ -24,6 +24,7 @@ const setAccessToken = (
 const handleRefresh = async (
   error: AxiosError,
   refreshAttempts: number,
+  router: any,
 ): Promise<AxiosResponse<any> | never> => {
   if (error.response) {
     const originalRequest = error.config as CustomAxiosRequestConfig; // Cast error.config to CustomAxiosRequestConfig
@@ -38,7 +39,7 @@ const handleRefresh = async (
       try {
         const refresh = Cookies.get("refresh");
         if (!refresh) {
-          const currentPath = useRouter().asPath;
+          const currentPath = router.asPath;
           Cookies.set("return_path", currentPath);
           return Promise.reject(error.response); // Reject with the original error
         }
@@ -87,7 +88,8 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response, // Return the response for all successful requests
   async (error) => {
-    return handleRefresh(error, 0); // Start with 0 refresh attempts
+    const router = useRouter();
+    return handleRefresh(error, 0, router); // Start with 0 refresh attempts
   },
 );
 
