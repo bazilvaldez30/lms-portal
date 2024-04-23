@@ -11,6 +11,11 @@ import { TbTargetArrow } from "react-icons/tb";
 import { FaRegEye, FaMedal } from "react-icons/fa";
 import { PiStudentBold } from "react-icons/pi";
 import { FaPersonChalkboard } from "react-icons/fa6";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import SchoolIcon from "@mui/icons-material/School";
+import TextSnippetIcon from "@mui/icons-material/TextSnippet";
+import Inventory2Icon from "@mui/icons-material/Inventory2";
 
 export const navmenuData: INavMenuData[] = [
   { name: "Home", link: "#landing-page" },
@@ -87,4 +92,61 @@ export const careersData: ICareersData[] = [
 
 export const socialLoginData: ISocialLoginData[] = [
   { name: "Google", icon: googleImage },
+];
+
+export const dashboardNavData: IDashboardNavData[] = [
+  {
+    title: "My Profile",
+    link: "/dashboard/profile",
+    icon: React.createElement(AccountCircleIcon),
+    roles: ["student", "teacher", "admin"],
+  },
+  {
+    title: "Admin",
+    link: "/dashboard/admin",
+    icon: React.createElement(AdminPanelSettingsIcon),
+    roles: ["admin"],
+  },
+  {
+    title: "Enrollment",
+    link: "/dashboard/enrollment",
+    icon: React.createElement(SchoolIcon),
+    roles: ["student", "teacher", "admin"],
+  },
+  {
+    title: "Feed",
+    link: "/dashboard/feed",
+    icon: React.createElement(AccountCircleIcon),
+    roles: ["student", "teacher", "admin"],
+  },
+  {
+    title: "File Manager",
+    link: "/dashboard/file-manager",
+    icon: React.createElement(TextSnippetIcon),
+    roles: ["student", "teacher", "admin"],
+  },
+  {
+    title: "Inventory",
+    link: "/dashboard/classes",
+    icon: React.createElement(Inventory2Icon),
+    roles: ["student", "teacher", "admin"],
+  },
+  {
+    title: "Adminssion",
+    link: "/dashboard/adminssion",
+    icon: React.createElement(Inventory2Icon),
+    roles: ["student", "teacher", "admin"],
+  },
+  {
+    title: "Registrar",
+    link: "/dashboard/registrar",
+    icon: React.createElement(Inventory2Icon),
+    roles: ["student", "teacher", "admin"],
+  },
+  {
+    title: "Accounting",
+    link: "/dashboard/accounting",
+    icon: React.createElement(Inventory2Icon),
+    roles: ["student", "teacher", "admin"],
+  },
 ];

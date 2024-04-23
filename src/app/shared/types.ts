@@ -39,6 +39,13 @@ interface ISocialLoginData {
   };
 }
 
+interface IDashboardNavData {
+  title: string;
+  link: string;
+  icon: React.ReactNode;
+  roles: string[];
+}
+
 /* Forms */
 interface ILoginForm {
   username_or_email: string;

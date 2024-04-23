@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <nav
-      hidden={url === "/login"}
+      hidden={url !== "/"}
       className={cn(
         `sticky top-0 z-50 w-full transform border-gray-300 bg-custom-1 px-6 py-5 text-custom-8 transition-all duration-500`,
         {

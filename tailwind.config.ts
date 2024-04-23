@@ -25,6 +25,8 @@ const config: Config = {
           6: '#232B2B',
           7: '#E5E5E5',
           8: '#FBFBFA',
+          9: '#BC434F',
+          10: '#FAFAE9',
         },
         muted: '#818181',
       },
