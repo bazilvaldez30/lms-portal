@@ -2,23 +2,26 @@
 
 import React, { MouseEvent, useState } from "react";
 import Image from "next/image";
-import { cn, validationErrorHandler } from "../shared/helpers";
-import { LoginFormSchema } from "../shared/schemas";
-import { useAppSelector, useAuth } from "../shared/hooks";
-import { socialLoginData } from "../shared/datas";
+
 import ErrorMsg from "../components/error-msg";
 import ErrorDialogBox from "../components/error-dialog";
-import { set } from "zod";
 import LoadingSpinner from "../components/loading-spinner";
+
+import { useAppSelector, useAuth } from "../shared/hooks";
+
+import { LoginFormSchema } from "../shared/schemas";
+
+import { cn, validationErrorHandler } from "../shared/helpers";
+
+import { socialLoginData } from "../shared/datas";
 
 export default function LoginForm() {
   //Redux State
   const { user } = useAppSelector((state) => state.user);
   console.log(user);
-  //Hooks
 
+  //Hooks
   const { handleManualLogin, handleLoginSocial } = useAuth();
-  const [loading, setLoading] = useState<boolean>(false);
 
   //Local State
   const [formData, setFormData] = useState<ILoginForm>({
@@ -26,6 +29,7 @@ export default function LoginForm() {
     password: "",
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [loading, setLoading] = useState<boolean>(false);
 
   //Event Handlers
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -55,6 +59,7 @@ export default function LoginForm() {
     if (!validationResult.success) {
       const errorMsgs = validationErrorHandler(validationResult.error.errors);
       setErrors(errorMsgs);
+      setLoading(false);
       return;
     }
 
