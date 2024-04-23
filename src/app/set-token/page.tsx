@@ -8,9 +8,9 @@ import { SET_USER } from "../redux/userSlice";
 
 export default function SetToken() {
   const dispatch = useAppDispatch();
-  const router = useRouter();
-  const searchParams = useSearchParams();
 
+  const searchParams = useSearchParams();
+  const router = useRouter();
   const token = searchParams.get("token");
 
   useEffect(() => {

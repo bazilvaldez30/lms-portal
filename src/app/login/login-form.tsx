@@ -2,6 +2,7 @@
 
 import React, { MouseEvent, useState } from "react";
 import Image from "next/image";
+import googleImage from "/public/images/google.png";
 import { cn, validationErrorHandler } from "../shared/helpers";
 import ErrorDialog from "../components/error-dialog";
 import { LoginFormSchema } from "../shared/schemas";
@@ -10,7 +11,6 @@ import {
   useSocialLogin,
   useManualLogin,
 } from "../shared/hooks";
-import { SocialLoginData } from "../shared/datas";
 
 export default function LoginForm() {
   //Redux State
@@ -116,21 +116,13 @@ export default function LoginForm() {
       >
         Login
       </button>
-      {SocialLoginData.map((item) => (
-        <button
-          key={item.name}
-          onClick={handleClick(item.name)}
-          className="flex justify-center gap-2 rounded-md border border-solid px-10 py-3 hover:bg-custom-7"
-        >
-          <Image
-            src={item.icon}
-            alt={`${item.name} logo`}
-            width={25}
-            height={25}
-          />
-          <p className="font-medium">Sign in with {item.name}</p>
-        </button>
-      ))}
+      <button
+        onClick={handleClick("Google")}
+        className="flex justify-center gap-2 rounded-md border border-solid px-10 py-3 hover:bg-custom-7"
+      >
+        <Image src={googleImage} alt="Google logo" width={25} height={25} />
+        <p className="font-medium">Sign in with Google</p>
+      </button>
     </form>
   );
 }

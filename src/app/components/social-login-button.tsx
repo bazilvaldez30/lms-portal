@@ -1,13 +1,19 @@
 /* import Image from "next/image";
 import React, { MouseEvent, use } from "react";
+import { useSocialLogin } from "../shared/hooks";
 
 export default function SocialLoginButton({
   social,
-  handleClick,
 }: {
   social: ISocialLoginData;
-  handleClick: (e: MouseEvent<HTMLButtonElement>) => void;
 }) {
+  const { handleLoginSocial } = useSocialLogin();
+
+  const handleClick = () => (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    handleLoginSocial(social.name);
+  };
+
   return (
     <button
       onClick={handleClick}
