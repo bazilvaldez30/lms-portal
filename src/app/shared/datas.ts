@@ -85,6 +85,6 @@ export const careersData: ICareersData[] = [
   { title: "Admin", img: programImage5 },
 ];
 
-export const SocialLoginData: ISocialLoginData[] = [
+export const socialLoginData: ISocialLoginData[] = [
   { name: "Google", icon: googleImage },
 ];

@@ -12,8 +12,8 @@ export default function Inquiry() {
         <div className="flex flex-col items-center md:flex-row md:gap-12">
           <div className="w-full space-y-8 md:ps-40">
             <h1 className="text-2xl font-semibold  md:pe-28">
-              Explore our comprehensive selection of programs tailored to
-              <span className="text-custom-2"> suit your academic goals.</span>
+              Explore our comprehensive selection of programs tailored to{" "}
+              <span className="text-custom-2">suit your academic goals.</span>
             </h1>
             <p>
               Embark on a journey of education with our extensive lineup of
