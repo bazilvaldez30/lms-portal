@@ -20,26 +20,6 @@ const setAccessToken = (
   if (config.headers) config.headers.Authorization = `Bearer ${accessToken}`;
 };
 
-// Define the handleRefresh function to handle token refresh logic
-/* const handleRefresh = async (
-  error: AxiosError,
-  refreshAttempts: number,
-  router: any,
-): Promise<AxiosResponse<any> | never> => {};
-
-api.interceptors.request.use(
-  (config) => {
-    const accessToken = getAccessToken();
-    if (accessToken) {
-      setAccessToken(config, accessToken);
-    }
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  },
-); */
-
 let refreshAttempts = 0; // Initialize the counter
 
 api.interceptors.response.use(
