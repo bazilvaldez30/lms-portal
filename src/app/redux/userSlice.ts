@@ -14,7 +14,7 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    SET_USER: (state, action: PayloadAction<object>) => {
+    SET_USER: (state, action: PayloadAction<object | null>) => {
       state.user = action.payload;
     },
     LOGOUT_USER: (state) => {

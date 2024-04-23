@@ -69,8 +69,9 @@ export const useSocialLogin = () => {
 
 export const useManualLogin = () => {
   const dispatch = useAppDispatch();
+  const router = useRouter();
 
-  const manualLogin = async (formData: any, setErrors: Function) => {
+  const handleManualLogin = async (formData: any, setErrors: Function) => {
     try {
       const response = await api.post(`/auth/login/`, formData);
       if (!(response.status >= 200 && response.status <= 299)) {
@@ -82,10 +83,29 @@ export const useManualLogin = () => {
       Cookies.set("access", response.data.access);
       Cookies.set("refresh", response.data.refresh);
       dispatch(SET_USER(response.data.user));
+      router.push("/dashboard");
     } catch (error) {
       console.log(error);
     }
   };
 
-  return { manualLogin };
+  return { handleManualLogin };
+};
+
+export const useLogout = () => {
+  const dispatch = useAppDispatch();
+
+  const handleLogout = async () => {
+    try {
+      Cookies.remove("access");
+      Cookies.remove("refresh");
+      dispatch(SET_USER(null));
+
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return { handleLogout };
 };

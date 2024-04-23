@@ -3,13 +3,19 @@
 import Link from "next/link";
 import React from "react";
 import { navmenuData } from "../shared/datas";
-import { useNavbarScroll, useGetPathName } from "../shared/hooks";
+import {
+  useNavbarScroll,
+  useGetPathName,
+  useAppSelector,
+  useLogout,
+} from "../shared/hooks";
 import { cn } from "../shared/helpers";
 
 export default function Navbar() {
   const { isScrolled } = useNavbarScroll();
   const { url } = useGetPathName();
-
+  const { user } = useAppSelector((state) => state.user);
+  const { handleLogout } = useLogout();
   return (
     <nav
       hidden={url === "/login"}
@@ -38,12 +44,21 @@ export default function Navbar() {
           ))}
         </div>
         <div className="flex gap-4 md:me-[3vw]">
-          <Link
-            className="button-primary rounded-full bg-custom-2"
-            href="/login"
-          >
-            LOGIN
-          </Link>
+          {user ? (
+            <button
+              onClick={handleLogout}
+              className="button-primary rounded-full bg-custom-2"
+            >
+              LOGOUT
+            </button>
+          ) : (
+            <Link
+              className="button-primary rounded-full bg-custom-2"
+              href="/login"
+            >
+              LOGIN
+            </Link>
+          )}
         </div>
       </div>
     </nav>

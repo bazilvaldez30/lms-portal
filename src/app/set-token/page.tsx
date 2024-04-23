@@ -21,7 +21,7 @@ export default function SetToken() {
       Cookies.set("access", access);
       Cookies.set("refresh", refresh);
       dispatch(SET_USER(user));
-      router.push("/");
+      router.push("/dashboard");
     }
   }, []);
 

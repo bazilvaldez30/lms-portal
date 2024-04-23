@@ -19,7 +19,7 @@ export default function LoginForm() {
   console.log(user);
   //Hooks
   const { handleLoginSocial } = useSocialLogin();
-  const { manualLogin } = useManualLogin();
+  const { handleManualLogin } = useManualLogin();
 
   //Local State
   const [formData, setFormData] = useState<ILoginForm>({
@@ -55,7 +55,7 @@ export default function LoginForm() {
     }
 
     setErrors({});
-    manualLogin(formData, setErrors);
+    handleManualLogin(formData, setErrors);
   };
 
   return (
