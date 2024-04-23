@@ -47,27 +47,8 @@ export const useNavbarScroll = () => {
   return { isScrolled };
 };
 
-export const useSocialLogin = () => {
-  const router = useRouter();
 
-  const handleLoginSocial = async (provider: string) => {
-    try {
-      const response = await api.post(`/auth/${provider}/login/`);
-      console.log(response);
-      if (!(response.status >= 200 && response.status <= 299))
-        console.log(response);
-
-      const { url } = response.data;
-      router.push(url);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  return { handleLoginSocial };
-};
-
-export const useManualLogin = () => {
+export const useAuth = () => {
   const dispatch = useAppDispatch();
   const router = useRouter();
 
@@ -89,11 +70,19 @@ export const useManualLogin = () => {
     }
   };
 
-  return { handleManualLogin };
-};
+  const handleLoginSocial = async (provider: string) => {
+    try {
+      const response = await api.post(`/auth/${provider}/login/`);
+      console.log(response);
+      if (!(response.status >= 200 && response.status <= 299))
+        console.log(response);
 
-export const useLogout = () => {
-  const dispatch = useAppDispatch();
+      const { url } = response.data;
+      router.push(url);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const handleLogout = async () => {
     try {
@@ -107,5 +96,5 @@ export const useLogout = () => {
     }
   };
 
-  return { handleLogout };
+  return { handleManualLogin, handleLogout, handleLoginSocial };
 };

@@ -4,22 +4,21 @@ import React, { MouseEvent, useState } from "react";
 import Image from "next/image";
 import { cn, validationErrorHandler } from "../shared/helpers";
 import { LoginFormSchema } from "../shared/schemas";
-import {
-  useAppSelector,
-  useSocialLogin,
-  useManualLogin,
-} from "../shared/hooks";
+import { useAppSelector, useAuth } from "../shared/hooks";
 import { socialLoginData } from "../shared/datas";
 import ErrorMsg from "../components/error-msg";
 import ErrorDialogBox from "../components/error-dialog";
+import { set } from "zod";
+import LoadingSpinner from "../components/loading-spinner";
 
 export default function LoginForm() {
   //Redux State
   const { user } = useAppSelector((state) => state.user);
   console.log(user);
   //Hooks
-  const { handleLoginSocial } = useSocialLogin();
-  const { handleManualLogin } = useManualLogin();
+
+  const { handleManualLogin, handleLoginSocial } = useAuth();
+  const [loading, setLoading] = useState<boolean>(false);
 
   //Local State
   const [formData, setFormData] = useState<ILoginForm>({
@@ -37,13 +36,18 @@ export default function LoginForm() {
     }));
   };
 
-  const handleClick =
+  const handleClickSocial =
     (provider: string) => (e: MouseEvent<HTMLButtonElement>) => {
+      setLoading(true);
       e.preventDefault();
-      handleLoginSocial(provider);
+      (async () => {
+        await handleLoginSocial(provider);
+        setLoading(false);
+      })();
     };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    setLoading(true);
     e.preventDefault();
 
     const validationResult = LoginFormSchema.safeParse(formData);
@@ -55,7 +59,8 @@ export default function LoginForm() {
     }
 
     setErrors({});
-    handleManualLogin(formData, setErrors);
+    await handleManualLogin(formData, setErrors);
+    setLoading(false);
   };
 
   return (
@@ -119,16 +124,18 @@ export default function LoginForm() {
       )}
 
       <button
+        disabled={loading}
         type="submit"
-        className="button-primary rounded-md bg-red-500 py-2 text-white shadow-sm "
+        className="button-primary rounded-md bg-red-500 py-2 text-white shadow-sm disabled:opacity-50"
       >
-        Login
+        {!loading ? "Login" : <LoadingSpinner />}
       </button>
       {socialLoginData.map((item) => (
         <button
+          disabled={loading}
           key={item.name}
-          onClick={handleClick(item.name)}
-          className="flex justify-center gap-2 rounded-md border border-solid px-10 py-3 hover:bg-custom-7"
+          onClick={handleClickSocial(item.name)}
+          className="flex justify-center gap-2 rounded-md border border-solid px-10 py-3 hover:bg-custom-7 disabled:opacity-50"
         >
           <Image
             src={item.icon}

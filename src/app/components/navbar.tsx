@@ -7,7 +7,7 @@ import {
   useNavbarScroll,
   useGetPathName,
   useAppSelector,
-  useLogout,
+  useAuth,
 } from "../shared/hooks";
 import { cn } from "../shared/helpers";
 
@@ -15,7 +15,8 @@ export default function Navbar() {
   const { isScrolled } = useNavbarScroll();
   const { url } = useGetPathName();
   const { user } = useAppSelector((state) => state.user);
-  const { handleLogout } = useLogout();
+  const { handleLogout } = useAuth();
+
   return (
     <nav
       hidden={url === "/login"}
