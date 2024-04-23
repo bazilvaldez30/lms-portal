@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import type { AppDispatch, RootState } from "../redux/store";
 import { usePathname, useRouter } from "next/navigation";
-import api from "./util/api";
+
 import { SET_USER } from "../redux/userSlice";
 import Cookies from "js-cookie";
 import toast from "react-hot-toast";
+import api from "./util/api";
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();

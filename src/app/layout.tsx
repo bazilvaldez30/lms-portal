@@ -3,8 +3,9 @@ import { Inter, Montserrat } from "next/font/google";
 import "./styles/globals.css";
 import "animate.css";
 import Navbar from "./components/navbar";
-import Provider from "./shared/util/providers";
+
 import { Toaster } from "react-hot-toast";
+import Providers from "./shared/util/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 const mont = Montserrat({ subsets: ["latin"] });
@@ -22,11 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={mont.className}>
-        <Provider>
+        <Providers>
           <Navbar />
           {children}
           <Toaster position="top-center" />
-        </Provider>
+        </Providers>
       </body>
     </html>
   );
