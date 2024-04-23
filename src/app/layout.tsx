@@ -5,7 +5,7 @@ import "animate.css";
 import Navbar from "./components/navbar";
 
 import { Toaster } from "react-hot-toast";
-import Providers from "./shared/util/providers";
+import Providers from "./shared/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 const mont = Montserrat({ subsets: ["latin"] });

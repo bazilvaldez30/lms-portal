@@ -6,7 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { SET_USER } from "../redux/userSlice";
 import Cookies from "js-cookie";
 import toast from "react-hot-toast";
-import api from "./util/api";
+import api from "./api";
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
