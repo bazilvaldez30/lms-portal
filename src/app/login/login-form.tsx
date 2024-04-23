@@ -3,7 +3,6 @@
 import React, { MouseEvent, useState } from "react";
 import Image from "next/image";
 import { cn, validationErrorHandler } from "../shared/helpers";
-import ErrorDialog from "../components/error-dialog";
 import { LoginFormSchema } from "../shared/schemas";
 import {
   useAppSelector,
@@ -11,6 +10,8 @@ import {
   useManualLogin,
 } from "../shared/hooks";
 import { socialLoginData } from "../shared/datas";
+import ErrorMsg from "../components/error-msg";
+import ErrorDialogBox from "../components/error-dialog";
 
 export default function LoginForm() {
   //Redux State
@@ -54,14 +55,14 @@ export default function LoginForm() {
     }
 
     setErrors({});
-    manualLogin(formData);
+    manualLogin(formData, setErrors);
   };
 
   return (
     <form
       action=""
       onSubmit={handleSubmit}
-      className={cn("flex flex-col gap-5", {
+      className={cn("flex w-72 flex-col gap-5", {
         "gap-3": errors.password,
       })}
     >
@@ -86,7 +87,7 @@ export default function LoginForm() {
             placeholder="example@mail.com"
           />
           {errors.username_or_email && (
-            <ErrorDialog>{errors.username_or_email}</ErrorDialog>
+            <ErrorMsg>{errors.username_or_email}</ErrorMsg>
           )}
         </div>
         <div>
@@ -107,9 +108,16 @@ export default function LoginForm() {
             })}
             placeholder="********"
           />
-          {errors.password && <ErrorDialog>{errors.password}</ErrorDialog>}
+          {errors.password && <ErrorMsg>{errors.password}</ErrorMsg>}
         </div>
       </div>
+
+      {errors.responseError && (
+        <div className="-my-4">
+          <ErrorDialogBox>{errors.responseError}</ErrorDialogBox>
+        </div>
+      )}
+
       <button
         type="submit"
         className="button-primary rounded-md bg-red-500 py-2 text-white shadow-sm "

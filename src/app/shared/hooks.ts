@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import api from "./util/api";
 import { SET_USER } from "../redux/userSlice";
 import Cookies from "js-cookie";
+import toast from "react-hot-toast";
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
@@ -68,14 +69,15 @@ export const useSocialLogin = () => {
 export const useManualLogin = () => {
   const dispatch = useAppDispatch();
 
-  const manualLogin = async (formData: any) => {
+  const manualLogin = async (formData: any, setErrors: Function) => {
     try {
       const response = await api.post(`/auth/login/`, formData);
       if (!(response.status >= 200 && response.status <= 299)) {
-        console.log(response);
+        setErrors({ responseError: response.data.error });
         return;
       }
 
+      toast.success("Login successful");
       Cookies.set("access", response.data.access);
       Cookies.set("refresh", response.data.refresh);
       dispatch(SET_USER(response.data.user));
