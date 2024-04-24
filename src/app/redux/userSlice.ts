@@ -1,8 +1,21 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+interface UserProps {
+  first_name: string;
+  last_name: string;
+  is_active: boolean;
+  roles: Array<string>;
+  /*  metadata: {
+    id?: number;
+    email?: string;
+    phone?: string;
+    role?: Array<string>;
+  }; */
+}
+
 // Define a type for the slice state
 interface UserState {
-  user: object | null;
+  user: UserProps | null;
 }
 
 // Define the initial state using that type
@@ -14,7 +27,7 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    SET_USER: (state, action: PayloadAction<object | null>) => {
+    SET_USER: (state, action: PayloadAction<UserProps | null>) => {
       state.user = action.payload;
     },
     LOGOUT_USER: (state) => {

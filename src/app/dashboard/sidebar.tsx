@@ -6,11 +6,14 @@ import SidenavMenuButton from "./sidenav-menu-button";
 import { cn } from "../shared/helpers";
 import { dashboardNavData } from "../shared/datas";
 import CloseIcon from "@mui/icons-material/Close";
-import { useGetPathName } from "../shared/hooks";
+import { useAppSelector, useGetPathName } from "../shared/hooks";
 
 export default function Sidebar() {
+  const { user } = useAppSelector((state) => state.user);
+  console.log(user);
   const [isOpen, setIsOpen] = useState(false);
   const { url } = useGetPathName();
+
   return (
     <>
       <SidenavMenuButton setIsOpen={setIsOpen} />
@@ -37,22 +40,31 @@ export default function Sidebar() {
 
           {/* Map navmenu */}
           <ul className="space-y-2 text-xl font-medium md:text-lg">
-            {dashboardNavData.map((item) => (
-              <li key={item.title}>
-                <Link
-                  className={cn(
-                    "group mx-auto flex items-center rounded-lg p-2 text-white hover:bg-custom-1",
-                    {
-                      "bg-custom-1": url === item.link,
-                    },
-                  )}
-                  href={item.link}
-                >
-                  {item.icon}
-                  <span className="ms-3">{item.title}</span>
-                </Link>
-              </li>
-            ))}
+            {dashboardNavData.map((item) => {
+              // Hide item if user is not logged in or user does not have the required role
+              const shouldHide = !user?.roles
+                ? false
+                : user !== null &&
+                  user !== undefined &&
+                  item.roles.some((role) => user.roles.includes(role));
+
+              return (
+                <li key={item.title} hidden={shouldHide}>
+                  <Link
+                    className={cn(
+                      "group mx-auto flex items-center rounded-lg p-2 text-white hover:bg-custom-1",
+                      {
+                        "bg-custom-1": url === item.link,
+                      },
+                    )}
+                    href={item.link}
+                  >
+                    {item.icon}
+                    <span className="ms-3">{item.title}</span>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </aside>
