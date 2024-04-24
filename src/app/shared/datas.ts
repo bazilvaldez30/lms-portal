@@ -111,14 +111,14 @@ export const dashboardNavData: IDashboardNavData[] = [
     title: "Enrollment",
     link: "/dashboard/enrollment",
     icon: React.createElement(SchoolIcon),
-    roles: ["student", "teacher", "admin"],
+    roles: ["student"],
   },
-  {
+  /* {
     title: "Feed",
     link: "/dashboard/feed",
     icon: React.createElement(AccountCircleIcon),
     roles: ["student", "teacher", "admin"],
-  },
+  }, */
   {
     title: "File Manager",
     link: "/dashboard/file-manager",
@@ -127,26 +127,26 @@ export const dashboardNavData: IDashboardNavData[] = [
   },
   {
     title: "Inventory",
-    link: "/dashboard/classes",
+    link: "/dashboard/inventory",
     icon: React.createElement(Inventory2Icon),
-    roles: ["student", "teacher", "admin"],
+    roles: ["asset manager"],
   },
   {
-    title: "Adminssion",
-    link: "/dashboard/adminssion",
+    title: "Admission",
+    link: "/dashboard/admission",
     icon: React.createElement(Inventory2Icon),
-    roles: ["student", "teacher", "admin"],
+    roles: ["adminssion"],
   },
   {
     title: "Registrar",
     link: "/dashboard/registrar",
     icon: React.createElement(Inventory2Icon),
-    roles: ["student", "teacher", "admin"],
+    roles: ["registrar"],
   },
   {
     title: "Accounting",
     link: "/dashboard/accounting",
     icon: React.createElement(Inventory2Icon),
-    roles: ["student", "teacher", "admin"],
+    roles: ["accounting"],
   },
 ];
