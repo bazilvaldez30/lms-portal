@@ -52,4 +52,11 @@ interface ILoginForm {
   password: string;
 }
 
-/* Props */
+interface SubjectData {
+  key: React.Key;
+  subject: string;
+  firstGrading: number;
+  secondGrading: number;
+  thirdGrading: number;
+  fourthGrading: number;
+}

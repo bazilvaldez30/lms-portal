@@ -2,10 +2,10 @@ import React from "react";
 
 export default function About() {
   return (
-    <section>
+    <section className="p-3 px-5">
       <div className="space-y-6">
         <h3 className="text-lg">About</h3>
-        <div className="space-y-3">
+        <div className="space-y-3  text-sm">
           <div className="flex gap-3">
             <span className=" text-custom-11">Fullname:</span>
             <p className="font-medium">John Bazil Valdez</p>
@@ -26,7 +26,7 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="mt-6 space-y-6">
+      <div className="mt-6 space-y-6 text-sm">
         <h3 className="text-lg">Contacts</h3>
         <div className="space-y-3">
           <div className="flex gap-3">
@@ -47,6 +47,9 @@ export default function About() {
           </div>
         </div>
       </div>
+      <button className="button-primary mt-6 w-full rounded-md bg-custom-6 text-sm">
+        Edit
+      </button>
     </section>
   );
 }
