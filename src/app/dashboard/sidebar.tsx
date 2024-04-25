@@ -19,7 +19,7 @@ export default function Sidebar() {
       <SidenavMenuButton setIsOpen={setIsOpen} />
       <aside
         className={cn(
-          "fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full bg-custom-9 transition-transform duration-700 lg:translate-x-0 xl:w-64",
+          "fixed left-0 top-0 z-40 h-screen w-64 bg-custom-9 transition-transform duration-700 sm:-translate-x-full lg:translate-x-0 xl:w-64",
           {
             "-translate-x-full": !isOpen,
           },

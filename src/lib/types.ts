@@ -60,3 +60,23 @@ interface SubjectData {
   thirdGrading: number;
   fourthGrading: number;
 }
+
+interface User {
+  lastName: string;
+  firstName: string;
+  email: string;
+  isActive: boolean;
+  isSuperuser: boolean;
+}
+
+interface Course {
+  name: string;
+  description: string;
+  id: string;
+}
+
+interface Subject {
+  name: string;
+  description: string;
+  id: string;
+}

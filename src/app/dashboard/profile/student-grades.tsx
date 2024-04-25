@@ -2,8 +2,7 @@
 
 import React from "react";
 import { Table } from "antd";
-import { ColumnsType } from "antd/es/table";
-
+import type { TableColumnsType } from "antd";
 export default function Grades() {
   // Dummy data for five subjects
   const subjectsData = [
@@ -50,7 +49,7 @@ export default function Grades() {
   ];
 
   // Columns configuration for Ant Design Table
-  const columns: ColumnsType = [
+  const columns: TableColumnsType = [
     {
       title: "Subject",
       dataIndex: "subject",

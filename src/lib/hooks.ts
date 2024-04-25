@@ -7,6 +7,7 @@ import { SET_USER } from "../redux/userSlice";
 import Cookies from "js-cookie";
 import toast from "react-hot-toast";
 import api from "./api";
+import { useQuery } from "react-query";
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
@@ -46,7 +47,6 @@ export const useNavbarScroll = () => {
 
   return { isScrolled };
 };
-
 
 export const useAuth = () => {
   const dispatch = useAppDispatch();
@@ -98,3 +98,7 @@ export const useAuth = () => {
 
   return { handleManualLogin, handleLogout, handleLoginSocial };
 };
+
+
+
+

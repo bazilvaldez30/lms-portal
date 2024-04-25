@@ -1,6 +1,7 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
+import { set } from "zod";
 
 interface CustomAxiosRequestConfig extends AxiosRequestConfig {
   _retry?: boolean; // Add the _retry property
@@ -19,6 +20,14 @@ const setAccessToken = (
 ): void => {
   if (config.headers) config.headers.Authorization = `Bearer ${accessToken}`;
 };
+
+api.interceptors.request.use((config) => {
+  const accessToken = getAccessToken();
+  if (accessToken) {
+    setAccessToken(config, accessToken);
+  }
+  return config;
+});
 
 let refreshAttempts = 0; // Initialize the counter
 
