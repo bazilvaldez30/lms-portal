@@ -3,7 +3,7 @@ import programImage8 from "/public/images/program-image-8.png";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Image from "next/image";
-import { inquiryData } from "@/app/shared/datas";
+import { inquiryData } from "@/lib/datas";
 
 export default function Inquiry() {
   return (

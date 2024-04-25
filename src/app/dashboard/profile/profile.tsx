@@ -6,7 +6,7 @@ export default function Profile() {
   return (
     <div className="">
       <div className="mb-4 grid grid-cols-12 gap-4">
-        <div className="col-span-8 flex h-28 items-center justify-center rounded-md bg-gray-50 dark:bg-gray-800">
+        <div className="col-span-8 flex items-center justify-center rounded-md bg-gray-50 dark:bg-gray-800">
           <p className="text-2xl text-gray-400 dark:text-gray-500">
             <svg
               className="h-3.5 w-3.5"

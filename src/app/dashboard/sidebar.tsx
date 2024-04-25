@@ -3,10 +3,10 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import SidenavMenuButton from "./sidenav-menu-button";
-import { cn } from "../shared/helpers";
-import { dashboardNavData } from "../shared/datas";
+import { cn } from "../../lib/helpers";
+import { dashboardNavData } from "../../lib/datas";
 import CloseIcon from "@mui/icons-material/Close";
-import { useAppSelector, useGetPathName } from "../shared/hooks";
+import { useAppSelector, useGetPathName } from "../../lib/hooks";
 
 export default function Sidebar() {
   const { user } = useAppSelector((state) => state.user);

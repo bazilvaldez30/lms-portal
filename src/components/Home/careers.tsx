@@ -1,8 +1,8 @@
-import { careersData } from "@/app/shared/datas";
+import { careersData } from "@/lib/datas";
 import Image from "next/image";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
-import ExpandableText from "../ExpandableText";
+import ExpandableText from "../expandable-text";
 
 export default function Careers() {
   return (

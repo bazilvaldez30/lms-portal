@@ -3,17 +3,17 @@
 import React, { MouseEvent, useState } from "react";
 import Image from "next/image";
 
-import ErrorMsg from "../components/error-msg";
-import ErrorDialogBox from "../components/error-dialog";
-import LoadingSpinner from "../components/loading-spinner";
+import ErrorMsg from "../../components/error-msg";
+import ErrorDialogBox from "../../components/error-dialog";
+import LoadingSpinner from "../../components/loading-spinner";
 
-import { useAppSelector, useAuth } from "../shared/hooks";
+import { useAppSelector, useAuth } from "../../lib/hooks";
 
-import { LoginFormSchema } from "../shared/schemas";
+import { LoginFormSchema } from "../../lib/schemas";
 
-import { cn, validationErrorHandler } from "../shared/helpers";
+import { cn, validationErrorHandler } from "../../lib/helpers";
 
-import { socialLoginData } from "../shared/datas";
+import { socialLoginData } from "../../lib/datas";
 
 export default function LoginForm() {
   //Redux State

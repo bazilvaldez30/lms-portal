@@ -2,14 +2,15 @@
 
 import Link from "next/link";
 import React from "react";
-import { navmenuData } from "../shared/datas";
+
 import {
   useNavbarScroll,
   useGetPathName,
   useAppSelector,
   useAuth,
-} from "../shared/hooks";
-import { cn } from "../shared/helpers";
+} from "../lib/hooks";
+import { cn } from "../lib/helpers";
+import { navmenuData } from "@/lib/datas";
 
 export default function Navbar() {
   const { isScrolled } = useNavbarScroll();

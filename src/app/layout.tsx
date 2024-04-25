@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
-import "./styles/globals.css";
+import "../styles/globals.css";
 import "animate.css";
-import Navbar from "./components/navbar";
+import Navbar from "../components/navbar";
 
 import { Toaster } from "react-hot-toast";
-import Providers from "./shared/providers";
+import Providers from "@/lib/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 const mont = Montserrat({ subsets: ["latin"] });

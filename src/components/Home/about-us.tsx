@@ -1,7 +1,6 @@
 "use client";
 
-import { aboutUsData } from "@/app/shared/datas";
-
+import { aboutUsData } from "@/lib/datas";
 import React from "react";
 import {
   VerticalTimeline,

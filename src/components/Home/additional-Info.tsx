@@ -1,4 +1,4 @@
-import { additionalInfoData } from "@/app/shared/datas";
+import { additionalInfoData } from "@/lib/datas";
 import React from "react";
 
 export default function AdditionalInfo() {

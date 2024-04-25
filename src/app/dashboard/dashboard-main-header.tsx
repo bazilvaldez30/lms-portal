@@ -1,5 +1,5 @@
 import React from "react";
-import SearchInput from "../components/search-input";
+import SearchInput from "../../components/search-input";
 import { FaRegBell, FaRegUser } from "react-icons/fa";
 
 export default function DashboardMainHeader({

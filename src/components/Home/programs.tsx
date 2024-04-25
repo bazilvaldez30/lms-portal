@@ -3,8 +3,8 @@
 import React from "react";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { programsData } from "@/app/shared/datas";
-import ExpandableText from "../ExpandableText";
+import { programsData } from "@/lib/datas";
+import ExpandableText from "../expandable-text";
 
 export default function Programs() {
   return (
