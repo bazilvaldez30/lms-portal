@@ -7,7 +7,7 @@ interface Props {
 const SidenavMenuButton: React.FC<Props> = ({ setIsOpen }) => {
   return (
     <button
-      className="ms-3 mt-2 block inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden"
+      className="ms-3 mt-2 block  items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
       onClick={() => setIsOpen((prev) => !prev)} // Toggle isOpen state
     >
       <span className="sr-only">Open sidebar</span>
