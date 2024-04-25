@@ -123,7 +123,7 @@ export const dashboardNavData: IDashboardNavData[] = [
     title: "File Manager",
     link: "/dashboard/file-manager",
     icon: React.createElement(TextSnippetIcon),
-    roles: ["student", "teacher", "admin"],
+    roles: ["student", "faculty", "admin"],
   },
   {
     title: "Inventory",
