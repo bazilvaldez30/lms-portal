@@ -6,14 +6,15 @@ import SidenavMenuButton from "./sidenav-menu-button";
 import { cn } from "../../lib/helpers";
 import { dashboardNavData } from "../../lib/datas";
 import CloseIcon from "@mui/icons-material/Close";
-import { useAppSelector, useGetPathName } from "../../lib/hooks";
+import { RiLogoutCircleRLine } from "react-icons/ri";
+import { useAppSelector, useAuth, useGetPathName } from "../../lib/hooks";
 
 export default function Sidebar() {
   const { user } = useAppSelector((state) => state.user);
   console.log(user);
   const [isOpen, setIsOpen] = useState(false);
   const { url } = useGetPathName();
-
+  const { handleLogout } = useAuth();
   return (
     <>
       <SidenavMenuButton setIsOpen={setIsOpen} />
@@ -65,6 +66,17 @@ export default function Sidebar() {
                 </li>
               );
             })}
+            <li>
+              <button
+                onClick={handleLogout}
+                className={cn(
+                  "group mx-auto me-auto flex w-full items-center rounded-lg p-2 text-white hover:bg-custom-1",
+                )}
+              >
+                <RiLogoutCircleRLine className="h-6 w-6" />
+                <span className="ms-3">Logout</span>
+              </button>
+            </li>
           </ul>
         </div>
       </aside>

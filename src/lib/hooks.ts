@@ -90,7 +90,11 @@ export const useAuth = () => {
       Cookies.remove("refresh");
       dispatch(SET_USER(null));
 
-      window.location.reload();
+      router.push("/login");
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     } catch (error) {
       console.log(error);
     }
@@ -98,7 +102,3 @@ export const useAuth = () => {
 
   return { handleManualLogin, handleLogout, handleLoginSocial };
 };
-
-
-
-
