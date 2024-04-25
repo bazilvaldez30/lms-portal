@@ -8,7 +8,7 @@ import Programs from "../components/home/programs";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Landing />
       <AboutUs />
       <AdditionalInfo />
@@ -16,6 +16,6 @@ export default function Home() {
       <Inquiry />
       <Community />
       <Careers />
-    </>
+    </main>
   );
 }

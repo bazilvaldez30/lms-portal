@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={mont.className}>
+      <body className={`${mont.className} relative`}>
         <Providers>
           <Navbar />
           {children}

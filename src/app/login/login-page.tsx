@@ -3,7 +3,6 @@ import olasLogo from "/public/images/olas-logo.png";
 import LoginForm from "./login-form";
 
 export default function LoginPage() {
-  
   return (
     <main>
       <div className="grid h-screen gap-5 p-5 sm:gap-0 lg:grid-cols-2">

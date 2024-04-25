@@ -39,7 +39,8 @@ const config: Config = {
         32: '8rem',
       },
       backgroundImage: {
-        aboutUsBg: 'url("/images/about-us-bg.png")',
+        aboutUs: 'url("/images/about-us-bg.png")',
+        timeline: 'url("/images/timeline-bg.png")',
         donate: 'url("/images/donate.webp")',
         appointment: 'url("/images/appointment.webp")',
       },

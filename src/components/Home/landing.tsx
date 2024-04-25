@@ -8,7 +8,7 @@ export default function Landing() {
   return (
     <main
       id="landing"
-      className="just flex flex-col items-center bg-custom-1 pt-4 text-white md:h-screen"
+      className="just flex flex-col items-center bg-custom-1 pt-4 text-white"
     >
       <div className="flex h-full flex-col items-center justify-center space-y-6 px-12">
         <h1 className="text-2xl font-semibold">
