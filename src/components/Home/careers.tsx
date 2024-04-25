@@ -1,20 +1,18 @@
-"use client";
-
-import React from "react";
+import { careersData } from "@/lib/datas";
 import Image from "next/image";
+import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { programsData } from "@/lib/datas";
-import ExpandableText from "./expandable-text";
+import ExpandableText from "../expandable-text";
 
-export default function Programs() {
+export default function Careers() {
   return (
-    <section id="programs" className="py-12">
+    <section id="careers" className="container py-12">
       <div className="container">
         <div className="space-y-8">
           <div className="flex justify-between">
-            <h1 className="text-2xl font-semibold">Explore Our Programs</h1>
-            <button className="button-primary h-fit text-nowrap rounded-full bg-custom-3">
-              Expore All <FaArrowRightLong className="icon" />
+            <h1 className="text-2xl font-semibold">Careers</h1>
+            <button className=" button-primary rounded-full bg-custom-3">
+              Browse <FaArrowRightLong className="icon" />
             </button>
           </div>
           <ExpandableText>
@@ -30,10 +28,12 @@ export default function Programs() {
             how we cultivate a passion for learning and empower students to
             thrive in both their academic pursuits and personal endeavors.
           </ExpandableText>
-          <div className="flex flex-wrap justify-center gap-16 pt-12 text-center">
-            {programsData.map((item) => (
+
+          <div className="flex flex-wrap justify-center gap-4 pt-12 text-center">
+            {careersData.map((item) => (
               <div key={item.title}>
                 <Image src={item.img} alt={item.title} />
+
                 <h2 className="text-xl font-semibold">{item.title}</h2>
               </div>
             ))}

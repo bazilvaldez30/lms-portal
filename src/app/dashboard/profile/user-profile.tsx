@@ -1,9 +1,8 @@
 import React from "react";
-import Grades from "./grades";
-
-import Calendar from "./calendar";
 import Timeline from "./timeline";
-import About from "./about";
+import Calendar from "./calendar";
+import About from "./about-student";
+import Grades from "./student-grades";
 
 export default function Profile() {
   return (

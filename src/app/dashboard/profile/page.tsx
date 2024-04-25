@@ -1,6 +1,6 @@
 import React from "react";
 import DashboardLayout from "../dashboard-layout";
-import Profile from "./profile";
+import Profile from "./user-profile";
 
 export default function Page() {
   return (
