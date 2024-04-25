@@ -1,10 +1,10 @@
-import AboutUs from "../components/Home/about-us";
-import AdditionalInfo from "../components/Home/additional-Info";
-import Careers from "../components/Home/careers";
-import Community from "../components/Home/community";
-import Inquiry from "../components/Home/inquiry";
-import Landing from "../components/Home/landing";
-import Programs from "../components/Home/programs";
+import AboutUs from "../components/home/about-us";
+import AdditionalInfo from "../components/home/additional-Info";
+import Careers from "../components/home/careers";
+import Community from "../components/home/community";
+import Inquiry from "../components/home/inquiry";
+import Landing from "../components/home/landing";
+import Programs from "../components/home/programs";
 
 export default function Home() {
   return (
