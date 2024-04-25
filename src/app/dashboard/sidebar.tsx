@@ -9,8 +9,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useAppSelector, useGetPathName } from "../../lib/hooks";
 
 export default function Sidebar() {
-  const { user } = useAppSelector((state) => state.user);
-  console.log(user);
+  /* const { user } = useAppSelector((state) => state.user);
+  console.log(user); */
   const [isOpen, setIsOpen] = useState(false);
   const { url } = useGetPathName();
 
