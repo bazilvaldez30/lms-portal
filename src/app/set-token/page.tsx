@@ -3,8 +3,8 @@
 import { useSearchParams, useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { useEffect } from "react";
-import { useAppDispatch } from "../shared/hooks";
-import { SET_USER } from "../redux/userSlice";
+import { useAppDispatch } from "../../lib/hooks";
+import { SET_USER } from "../../redux/userSlice";
 
 export default function SetToken() {
   const dispatch = useAppDispatch();

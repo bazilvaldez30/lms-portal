@@ -30,8 +30,8 @@ export default function Timeline() {
           </div>
           <p className="text-sm text-custom-11">
             Eager student, avid learner, and creative thinker. Passionate about
-            exploring the world and embracing new challenges. Let's learn and
-            grow together!
+            exploring the world and embracing new challenges. Let&apos;s learn
+            and grow together!
           </p>
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="flex flex-col items-center justify-center gap-3 text-[14px] md:flex-row md:items-start md:justify-start md:gap-12">
