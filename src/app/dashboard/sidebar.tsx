@@ -19,7 +19,7 @@ export default function Sidebar() {
       <SidenavMenuButton setIsOpen={setIsOpen} />
       <aside
         className={cn(
-          "fixed left-0 top-0 z-40 h-screen w-64 bg-custom-9 transition-transform duration-700 sm:translate-x-0 xl:w-64",
+          "fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full bg-custom-9 transition-transform duration-700 lg:translate-x-0 xl:w-64",
           {
             "-translate-x-full": !isOpen,
           },
@@ -32,7 +32,7 @@ export default function Sidebar() {
             {/* Hide close button in large devices */}
             <button
               onClick={() => setIsOpen((prev) => !prev)}
-              className="button-primary bg-custom-9 text-black md:hidden"
+              className="button-primary block bg-custom-9 text-black md:hidden"
             >
               <CloseIcon className="h-7 w-7 fill-custom-2 hover:fill-custom-5" />
             </button>
