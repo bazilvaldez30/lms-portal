@@ -5,6 +5,7 @@ import Careers from "../components/Home/careers";
 import Community from "../components/Home/community";
 import Inquiry from "../components/Home/inquiry";
 import Programs from "../components/Home/programs";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Inquiry />
       <Community />
       <Careers />
+      <Footer />
     </main>
   );
 }

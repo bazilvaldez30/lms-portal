@@ -3,6 +3,7 @@ import { CgGirl } from "react-icons/cg";
 import { GiTeacher } from "react-icons/gi";
 import { GrUserWorker } from "react-icons/gr";
 import { TbTools } from "react-icons/tb";
+import CommunityTable from "./registrar/community-table";
 
 export default function DashboardConntent() {
   return (
@@ -35,6 +36,14 @@ export default function DashboardConntent() {
             <span className="text-sm">Number of Equipment</span>
             <h1 className="text-3xl font-bold">2013</h1>
           </div>
+        </div>
+      </div>
+      <div className="mb-4 grid grid-cols-12 gap-4 ">
+        <div className="dark:bg-gray-803 col-span-4 mx-auto flex w-full items-center justify-center rounded-md bg-custom-9 px-3 text-custom-8">
+          qwe
+        </div>
+        <div className="dark:bg-gray-803 col-span-8 mx-auto flex w-full items-center justify-center rounded-md  px-3 text-custom-8">
+          <CommunityTable />
         </div>
       </div>
     </div>
