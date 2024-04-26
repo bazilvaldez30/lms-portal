@@ -41,8 +41,9 @@ export default function Footer() {
               OLAS
             </Link>
             <p className="font-inter mt-4 max-w-[350px] text-base font-light text-custom-7">
-              Our Lord's Angels School is a private school that offers a quality
-              education for students from preschool to senior high school.
+              Our Lord&apos;s Angels School is a private school that offers a
+              quality education for students from preschool to senior high
+              school.
             </p>
             {/* <!-- SOCIAL MEDIA ICONS --> */}
             <div className="mb-8 mt-6 flex flex-row">
@@ -110,7 +111,7 @@ export default function Footer() {
                 href=""
                 className="font-inter font-light text-custom-7 hover:text-custom-2"
               >
-                FAQ's
+                FAQ&apos;s
               </a>
             </div>
 
