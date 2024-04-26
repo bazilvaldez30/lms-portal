@@ -15,7 +15,7 @@ const DashboardLayout: React.FC<Readonly<DashboardLayoutProps>> = ({
     <main>
       <Sidebar />
       <div className="p-4 lg:ml-64">
-        <div className="rounded-lg  border-gray-200 px-4 dark:border-gray-700">
+        <div className="animate__animated animate__fadeIn rounded-lg border-gray-200 px-4 dark:border-gray-700">
           <DashboardMainHeader pageTitle={pageTitle || ""} />
           {children}
         </div>

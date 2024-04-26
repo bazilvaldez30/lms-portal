@@ -52,7 +52,7 @@ api.interceptors.response.use(
             return Promise.reject(error.response); // Reject with the original error
           }
 
-          const refreshResponse = await api.post("auth/token/refresh/", {
+          const refreshResponse = await api.post("/auth/token/refresh/", {
             refresh,
           });
 

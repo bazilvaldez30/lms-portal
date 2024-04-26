@@ -96,6 +96,12 @@ export const socialLoginData: ISocialLoginData[] = [
 
 export const dashboardNavData: IDashboardNavData[] = [
   {
+    title: "Dashboard",
+    link: "/dashboard",
+    icon: React.createElement(AccountCircleIcon),
+    roles: ["admin"],
+  },
+  {
     title: "My Profile",
     link: "/dashboard/profile",
     icon: React.createElement(AccountCircleIcon),
