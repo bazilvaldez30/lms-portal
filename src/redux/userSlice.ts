@@ -5,12 +5,16 @@ interface UserProps {
   last_name: string;
   is_active: boolean;
   roles: Array<string>;
-  /*  metadata: {
+  metadata: {
     id?: number;
     email?: string;
     phone?: string;
-    role?: Array<string>;
-  }; */
+    address?: string;
+    birthdate?: string;
+    gender?: string;
+    guardian?: string;
+    profile_picture?: string;
+  };
 }
 
 // Define a type for the slice state

@@ -6,8 +6,8 @@ import { BsTelephone } from "react-icons/bs";
 export default function Footer() {
   return (
     <section>
-      <div className="w-screen flex-col space-y-16 bg-custom-1 px-6 py-20 text-white lg:flex lg:px-10 xl:px-24">
-        <div className="items-center lg:flex lg:flex-row lg:justify-between">
+      <div className="w-screen flex-col space-y-16 bg-custom-1 px-6 py-20 text-white lg:flex lg:px-10 xl:px-24 ">
+        <div className="items-center space-y-6 md:space-y-0 lg:flex lg:flex-row lg:justify-between">
           <div className="space-y-3">
             <h1 className="text-4xl font-bold">Subscribe to Our Newsletter</h1>
             <p>
@@ -87,7 +87,7 @@ export default function Footer() {
           {/*  <!-- FOOTER LINKS --> */}
           <div className="flex grow flex-row flex-wrap lg:mx-10 lg:flex-nowrap lg:justify-center">
             <div className="mb-5 mr-8 flex max-w-[200px] grow basis-[100px] flex-col space-y-5 lg:mx-10">
-              <h2 className="font-inter font-medium">OLAS</h2>
+              <h2 className="font-inter text-xl font-semibold">OLAS</h2>
               {navmenuData.map((item) => (
                 <Link
                   key={item.name}
@@ -100,7 +100,7 @@ export default function Footer() {
             </div>
 
             <div className="mb-5 mr-8 flex max-w-[200px] grow basis-[100px] flex-col space-y-5 lg:mx-10">
-              <h2 className="font-inter font-medium">SUPPORT</h2>
+              <h2 className="font-inter text-xl font-semibold">SUPPORT</h2>
               <a
                 href=""
                 className="font-inter whitespace-nowrap font-light text-custom-7 hover:text-custom-2"
@@ -116,7 +116,7 @@ export default function Footer() {
             </div>
 
             <div className="mb-5 mr-8 flex max-w-[200px] grow basis-[100px] flex-col space-y-5 lg:mx-10">
-              <h2 className="font-inter font-medium">COMMUNITY</h2>
+              <h2 className="font-inter text-xl font-semibold">COMMUNITY</h2>
               <a
                 href=""
                 className="font-inter font-light text-custom-7 hover:text-custom-2"
