@@ -3,6 +3,7 @@ import { ClassValue } from "clsx";
 import { twMerge } from "tw-merge";
 import { ZodIssue } from "zod";
 import api from "./api";
+import toast from "react-hot-toast";
 
 export function validationErrorHandler(errors: ZodIssue[]): {
   [key: string]: string;
@@ -108,12 +109,13 @@ export const fetchSubjects = async (): Promise<Subject[]> => {
   }
 };
 
-export const fetchAssets = async (): Promise<Assets[]> => {
+export const fetchAssets = async (): Promise<Asset[]> => {
   try {
     const response = await api.post("/graphql/", {
       query: `
       query MyQuery {
         allAsset {
+          id
           borrower
           borrowedAt
           description    
@@ -124,9 +126,39 @@ export const fetchAssets = async (): Promise<Assets[]> => {
       }
       `,
     });
-    return response.data.data.allAsset;
+    return  response.data.data.allAsset;
   } catch (error) {
     console.error("Error fetching users:", error);
     throw error;
+  }
+};
+
+export const createAsset = async (formData: any) => {
+  try {
+    const response = await api.post(`/inventory/asset/v1/add/`, formData);
+
+    if (!(response.status >= 200 && response.status <= 299)) {
+      toast.error("Error creating asset, Please try again.");
+      return;
+    }
+
+    toast.success("Asset created successfully");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteAsset = async (id: string) => {
+  try {
+    const response = await api.delete(`/inventory/asset/v1/${id}/`);
+
+    if (!(response.status >= 200 && response.status <= 299)) {
+      toast.error("Error deleting asset, Please try again.");
+      return;
+    }
+
+    toast.success("Asset deleted successfully");
+  } catch (error) {
+    console.log(error);
   }
 };

@@ -7,7 +7,8 @@ import { SET_USER } from "../redux/userSlice";
 import Cookies from "js-cookie";
 import toast from "react-hot-toast";
 import api from "./api";
-import { useQuery } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
+import { createAsset, deleteAsset } from "./helpers";
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
@@ -101,4 +102,24 @@ export const useAuth = () => {
   };
 
   return { handleManualLogin, handleLogout, handleLoginSocial };
+};
+
+export const useAssets = () => {
+  const queryClient = useQueryClient();
+
+  const { mutateAsync: addAssetMutation } = useMutation({
+    mutationFn: createAsset,
+    onSuccess: () => {
+      queryClient.invalidateQueries(["assets"]);
+    },
+  });
+
+  const { mutateAsync: deleteAssetMutation } = useMutation({
+    mutationFn: deleteAsset,
+    onSuccess: () => {
+      queryClient.invalidateQueries(["assets"]);
+    },
+  });
+
+  return { addAssetMutation, deleteAssetMutation };
 };
