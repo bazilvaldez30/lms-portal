@@ -107,3 +107,26 @@ export const fetchSubjects = async (): Promise<Subject[]> => {
     throw error;
   }
 };
+
+export const fetchAssets = async (): Promise<Assets[]> => {
+  try {
+    const response = await api.post("/graphql/", {
+      query: `
+      query MyQuery {
+        allAsset {
+          borrower
+          borrowedAt
+          description    
+          name
+          serialNumber
+          status  
+        }
+      }
+      `,
+    });
+    return response.data.data.allAsset;
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    throw error;
+  }
+};

@@ -81,3 +81,11 @@ interface Subject {
   id: string;
 }
 
+interface Assets {
+  borrower: string;
+  borrowedAt: string;
+  description: string;
+  name: string;
+  serialNumber: string;
+  status: string;
+}

@@ -1,89 +1,67 @@
+"use client";
+
 import React from "react";
+import { Table } from "antd";
+import type { TableColumnsType } from "antd";
+import { fetchAssets, generateColumns } from "@/lib/helpers";
+import { FaEye } from "react-icons/fa";
+import { FiEdit } from "react-icons/fi";
+import { RiDeleteBin5Line } from "react-icons/ri";
+import { FaPlus } from "react-icons/fa6";
+import { useQuery } from "react-query";
 
 export default function Inventory() {
-  return (
-    <div className="">
-      <div className="mb-4 grid grid-cols-12 gap-4">
-        <div className="col-span-8 flex h-28 items-center justify-center rounded-md bg-gray-50 dark:bg-gray-800">
-          <p className="text-2xl text-gray-400 dark:text-gray-500">
-            <svg
-              className="h-3.5 w-3.5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 18 18"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 1v16M1 9h16"
-              />
-            </svg>
-          </p>
-        </div>
-        <div className="col-span-4 flex h-28 items-center justify-center rounded-md bg-gray-50 dark:bg-gray-800">
-          <p className="text-2xl text-gray-400 dark:text-gray-500">
-            <svg
-              className="h-3.5 w-3.5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 18 18"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 1v16M1 9h16"
-              />
-            </svg>
-          </p>
-        </div>
-      </div>
+  const { data, isLoading, isError, error } = useQuery<Assets[], Error>({
+    queryKey: ["assets"],
+    queryFn: fetchAssets,
+  });
 
-      <div className="mb-4 grid grid-cols-12 gap-4">
-        <div className="col-span-4 flex h-28 items-center justify-center rounded-md bg-gray-50 dark:bg-gray-800">
-          <p className="text-2xl text-gray-400 dark:text-gray-500">
-            <svg
-              className="h-3.5 w-3.5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 18 18"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 1v16M1 9h16"
-              />
-            </svg>
-          </p>
-        </div>
-        <div className="col-span-8 flex h-28 items-center justify-center rounded-md bg-gray-50 dark:bg-gray-800">
-          <p className="text-2xl text-gray-400 dark:text-gray-500">
-            <svg
-              className="h-3.5 w-3.5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 18 18"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 1v16M1 9h16"
-              />
-            </svg>
-          </p>
-        </div>
+  const columnOrder = [
+    "serialNumber",
+    "name",
+    "description",
+    "borrower",
+    "borrowedAt",
+    "status",
+  ];
+
+  const columns: TableColumnsType = generateColumns(data, columnOrder);
+
+  columns.push({
+    title: "Actions",
+    key: "actions",
+    width: 200,
+    fixed: "right",
+    render: (record: any) => (
+      <div className="flex gap-3">
+        <button className="button-primary m-0 bg-white p-0 hover:scale-125">
+          <FaEye className="icon text-black" />
+        </button>
+        <button className="button-primary m-0 bg-white p-0 hover:scale-125">
+          <FiEdit className="icon text-blue-600" />
+        </button>
+        <button className="button-primary m-0 bg-white p-0 hover:scale-125">
+          <RiDeleteBin5Line className="icon text-red-600" />
+        </button>
       </div>
-    </div>
+    ),
+  });
+
+  return (
+    <section className="w-full space-y-4 border px-4 py-6">
+      <button className="button-primary mb-5 ms-auto rounded-lg bg-custom-1 px-8 py-3 pe-6">
+        Add Asset <FaPlus className="text-xl" />
+      </button>
+      <div className="mx-auto overflow-x-auto md:max-w-6xl">
+        <Table
+          dataSource={data?.map((item) => ({
+            ...item,
+            key: item.serialNumber,
+          }))}
+          columns={columns}
+          pagination={false}
+        />
+      </div>
+    </section>
   );
 }
