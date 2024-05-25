@@ -126,7 +126,7 @@ export const fetchAssets = async (): Promise<Asset[]> => {
       }
       `,
     });
-    return  response.data.data.allAsset;
+    return response.data.data.allAsset;
   } catch (error) {
     console.error("Error fetching users:", error);
     throw error;
@@ -158,6 +158,24 @@ export const deleteAsset = async (id: string) => {
     }
 
     toast.success("Asset deleted successfully");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const updateAsset = async (formData: Asset) => {
+  try {
+    const response = await api.put(
+      `/inventory/asset/v1/${formData.id}/update/`,
+      formData,
+    );
+
+    if (!(response.status >= 200 && response.status <= 299)) {
+      toast.error("Error updating asset, Please try again.");
+      return;
+    }
+
+    toast.success("Asset updated successfully");
   } catch (error) {
     console.log(error);
   }

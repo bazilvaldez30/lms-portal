@@ -15,11 +15,11 @@ import { useAssets } from "@/lib/hooks";
 import { convertKeysToSnakeCase } from "@/lib/utils";
 
 import React from "react";
-import { FaEye, FaPlus } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 import { FiEdit } from "react-icons/fi";
 
 export default function AssetForm({ record }: { record?: Asset }) {
-  const { addAssetMutation } = useAssets();
+  const { addAssetMutation, updateAssetMutation } = useAssets();
 
   const [formData, setFormData] = React.useState<Asset>(
     convertKeysToSnakeCase(record) || {
@@ -40,6 +40,16 @@ export default function AssetForm({ record }: { record?: Asset }) {
       ...prevData,
       [id]: value,
     }));
+  };
+
+  const handleSave = async () => {
+    if (record) {
+      // update asset
+      return await updateAssetMutation(formData);
+    }
+
+    // create asset
+    await addAssetMutation(formData);
   };
 
   return (
@@ -138,10 +148,7 @@ export default function AssetForm({ record }: { record?: Asset }) {
         </div>
         <DialogFooter>
           <DialogClose asChild>
-            <Button
-              onClick={async () => await addAssetMutation(formData)}
-              className=" bg-custom-3"
-            >
+            <Button onClick={handleSave} className=" bg-custom-3">
               {record ? "Save changes" : "Add Asset"}
             </Button>
           </DialogClose>
