@@ -67,9 +67,11 @@ export default function AssetForm({ record }: { record?: Asset }) {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
+          <DialogTitle>{record ? "Edit Asset" : "Add Asset"}</DialogTitle>
           <DialogDescription>
-            Make changes to your profile here. Click save when you're done.
+            {record
+              ? "Make changes to your Assets here. Click save when you're done."
+              : "Add your Asset here. Click 'Add asset' when you're done."}
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
