@@ -46,7 +46,7 @@ export default function DashboardConntent() {
             <h3 className="text-base font-semibold text-black md:text-xl">
               Students
             </h3>
-            <select className="w-28 bg-[#41047F]">
+            <select className="w-28 bg-yellow-100 py-1 text-center text-custom-6">
               <option value="weekly">all</option>
             </select>
           </div>
