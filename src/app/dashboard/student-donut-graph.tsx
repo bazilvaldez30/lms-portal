@@ -20,8 +20,8 @@ export const data = {
     {
       label: "Number of students",
       data: [115, 115],
-      backgroundColor: ["#133782", "#BC434F"],
-      borderColor: ["#133782", "#BC434F"],
+      backgroundColor: ["#BC434F", "#133782"],
+      borderColor: ["#BC434F", "#133782"],
     },
   ],
 };

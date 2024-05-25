@@ -5,6 +5,7 @@ import { GrUserWorker } from "react-icons/gr";
 import { TbTools } from "react-icons/tb";
 import CommunityTable from "./registrar/community-table";
 import { StudentDonutGraph } from "./student-donut-graph";
+import { GoDotFill } from "react-icons/go";
 
 export default function DashboardConntent() {
   return (
@@ -40,7 +41,7 @@ export default function DashboardConntent() {
         </div>
       </div>
       <div className="mb-4 grid grid-cols-12 gap-4 ">
-        <div className="relative col-span-4 mx-auto flex w-full flex-col items-center justify-between rounded-md px-6 py-6 text-custom-8">
+        <div className="relative col-span-4 mx-auto flex w-full flex-col items-center justify-between rounded-md border px-6 py-6 text-custom-8">
           <div className="flex w-full items-center justify-between">
             <h3 className="text-base font-semibold text-black md:text-xl">
               Students
@@ -52,13 +53,15 @@ export default function DashboardConntent() {
           <div className="flex h-52 justify-center">
             <StudentDonutGraph />
           </div>
-          <div className="flex w-full items-center justify-between">
-            <h3 className="text-base font-semibold text-black md:text-xl">
-              Students
-            </h3>
-            <select className="w-28 bg-[#41047F]">
-              <option value="weekly">all</option>
-            </select>
+          <div className="flex w-full items-center justify-between font-semibold text-custom-11">
+            <div className="flex items-center gap-2">
+              <GoDotFill fill="#BC434F" />
+              Boys: 250
+            </div>
+            <div className="flex items-center gap-2">
+              <GoDotFill fill="#133782" />
+              Girls: 250
+            </div>
           </div>
         </div>
         <div className="dark:bg-gray-803 col-span-8 mx-auto flex w-full items-center justify-center rounded-md  px-3 text-custom-8">
